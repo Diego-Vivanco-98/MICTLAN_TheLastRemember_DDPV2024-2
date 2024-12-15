@@ -70,3 +70,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+MICTLAN_TLR/Temp/FSTimeGet-2cb3efc22a967284aa188ce51f8d8fe0
+MICTLAN_TLR/Temp/FSTimeGet-493c655700bd9594f9df6695c0a991a1
+/MICTLAN_TLR/Temp/*
+
