@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerProta : MonoBehaviour
 {
-    public float velocidadMovimiento = 5.0f;
+    public float velocidadMovimiento = 10.0f;
     public float velocidadRotacion = 200.0f;
 
     private Animator anim;
@@ -27,5 +27,8 @@ public class PlayerProta : MonoBehaviour
 
         transform.Rotate(0,x*Time.deltaTime*velocidadRotacion, 0);
         transform.Translate(0, 0, y*Time.deltaTime*velocidadMovimiento);
+
+        anim.SetFloat("velX", x);
+        anim.SetFloat("velY", y);
     }
 }
