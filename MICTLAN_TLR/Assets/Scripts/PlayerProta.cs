@@ -14,13 +14,9 @@ public class PlayerProta : MonoBehaviour
     public float fuerzaDeSalto = 8.0f;
     public bool puedoSaltar;
 
-
-    void FixedUpdate()
-    {
-        transform.Rotate(0, x * Time.deltaTime * velocidadRotacion, 0);
-        transform.Translate(0, 0, y * Time.deltaTime * velocidadMovimiento);
-    }
-
+    public bool estoyAtacando;
+    public bool avanzoSolo;
+    public float impulsoGolpe = 10f;
 
 
     // Start is called before the first frame update
@@ -29,12 +25,29 @@ public class PlayerProta : MonoBehaviour
         puedoSaltar = false;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        
+
+    }
+
+    void FixedUpdate()
+    {
+        if (!estoyAtacando)
+        {
+            transform.Rotate(0, x * Time.deltaTime * velocidadRotacion, 0);
+            transform.Translate(0, 0, y * Time.deltaTime * velocidadMovimiento);
+        }
+        //transform.Rotate(0, x * Time.deltaTime * velocidadRotacion, 0);
+        //transform.Translate(0, 0, y * Time.deltaTime * velocidadMovimiento);
+        if (avanzoSolo)
+        {
+            rb.velocity = transform.forward * impulsoGolpe;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+
+    
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
 
@@ -42,13 +55,23 @@ public class PlayerProta : MonoBehaviour
         anim.SetFloat("velX", x);
         anim.SetFloat("velY", y);
 
+        if(Input.GetKeyDown(KeyCode.Return) && puedoSaltar && !estoyAtacando)
+        {
+            anim.SetTrigger("golpeo");
+            estoyAtacando = true;
+        }
+
         if (puedoSaltar)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (!estoyAtacando)
             {
-                
-                rb.AddForce(new Vector3(0, fuerzaDeSalto, 0), ForceMode.Impulse);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+
+                    rb.AddForce(new Vector3(0, fuerzaDeSalto, 0), ForceMode.Impulse);
+                }
             }
+
             anim.SetBool("tocoSuelo", true);
 
         }
@@ -65,5 +88,28 @@ public class PlayerProta : MonoBehaviour
     {
         anim.SetBool("tocoSuelo", false);
         anim.SetBool("tocoSuelo", false);
+    }
+
+
+    public void DejarGolpear()
+    {
+        estoyAtacando = false;
+        //avanzoSolo = false;
+    }
+
+ /*   public void DejarPatear()
+    {
+        estoyPateando = false;
+    }
+ */
+
+    public void AvanzandoSolo()
+    {
+        avanzoSolo = true;
+    }
+
+    public void DejoAvanzar()
+    {
+        avanzoSolo = false;
     }
 }
