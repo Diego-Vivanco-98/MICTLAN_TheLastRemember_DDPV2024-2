@@ -35,8 +35,7 @@ public class PlayerProta : MonoBehaviour
             transform.Rotate(0, x * Time.deltaTime * velocidadRotacion, 0);
             transform.Translate(0, 0, y * Time.deltaTime * velocidadMovimiento);
         }
-        //transform.Rotate(0, x * Time.deltaTime * velocidadRotacion, 0);
-        //transform.Translate(0, 0, y * Time.deltaTime * velocidadMovimiento);
+
         if (avanzoSolo)
         {
             rb.velocity = transform.forward * impulsoGolpe;
@@ -73,6 +72,7 @@ public class PlayerProta : MonoBehaviour
             }
 
             anim.SetBool("tocoSuelo", true);
+            //puedoSaltar=true;
 
         }
         else
@@ -87,7 +87,7 @@ public class PlayerProta : MonoBehaviour
     public void EstoyCayendo()
     {
         anim.SetBool("tocoSuelo", false);
-        anim.SetBool("tocoSuelo", false);
+        anim.SetBool("salte", false);
     }
 
 
