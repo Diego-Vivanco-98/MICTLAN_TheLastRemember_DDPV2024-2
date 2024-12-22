@@ -18,6 +18,8 @@ public class PlayerProta : MonoBehaviour
     public bool avanzoSolo;
     public float impulsoGolpe = 10f;
 
+    public bool estoyPateando;
+
 
     // Start is called before the first frame update
     void Start()
@@ -54,10 +56,17 @@ public class PlayerProta : MonoBehaviour
         anim.SetFloat("velX", x);
         anim.SetFloat("velY", y);
 
-        if(Input.GetKeyDown(KeyCode.Return) && puedoSaltar && !estoyAtacando)
+        if(Input.GetKeyDown(KeyCode.Return) && puedoSaltar && !estoyAtacando && !estoyPateando)
         {
             anim.SetTrigger("golpeo");
             estoyAtacando = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P) && puedoSaltar && !estoyAtacando && !estoyPateando)
+        {
+            anim.SetTrigger("patear");
+            estoyPateando = true;
+            //SoundSFxPegaso.InstanceSFxPegaso.golpeaPegaso();
         }
 
         if (puedoSaltar)
@@ -97,11 +106,11 @@ public class PlayerProta : MonoBehaviour
         //avanzoSolo = false;
     }
 
- /*   public void DejarPatear()
+    public void DejarPatear()
     {
         estoyPateando = false;
     }
- */
+ 
 
     public void AvanzandoSolo()
     {
