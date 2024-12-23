@@ -39,18 +39,16 @@ public class SoundSFxProta : MonoBehaviour
         SFxProtaSource.PlayOneShot(SFxClip[1]);
     }
 
+    public void golpeaProta()
+    {
+        SFxProtaSource.PlayOneShot(SFxClip[2]);
+    }
+    public void pateaProta()
+    {
+        SFxProtaSource.PlayOneShot(SFxClip[3]);
+    }
     public void impactaSueloProta()
     {
         SFxProtaSource.PlayOneShot(SFxClip[2]);
     }
-
-    public void golpeaProta()
-    {
-        SFxProtaSource.PlayOneShot(SFxClip[3]);
-    }
-    public void pateaProta()
-    {
-        SFxProtaSource.PlayOneShot(SFxClip[4]);
-    }
-
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerProta : MonoBehaviour
 {
+    private AnimatorStateInfo playerAnimatorInfo;
+
     public Rigidbody rb;
     public float velocidadMovimiento = 10.0f;
     public float velocidadRotacion = 200.0f;
@@ -48,7 +50,8 @@ public class PlayerProta : MonoBehaviour
     void Update()
     {
 
-    
+        playerAnimatorInfo = anim.GetCurrentAnimatorStateInfo(0);
+
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
 
@@ -60,12 +63,13 @@ public class PlayerProta : MonoBehaviour
         {
             anim.SetTrigger("golpeo");
             estoyAtacando = true;
-        }
+            SoundSFxProta.InstanceSFxProta.golpeaProta();        }
 
         if (Input.GetKeyDown(KeyCode.P) && puedoSaltar && !estoyAtacando && !estoyPateando)
         {
             anim.SetTrigger("patear");
             estoyPateando = true;
+            SoundSFxProta.InstanceSFxProta.pateaProta();
             //SoundSFxPegaso.InstanceSFxPegaso.golpeaPegaso();
         }
 
@@ -77,6 +81,7 @@ public class PlayerProta : MonoBehaviour
                 {
 
                     rb.AddForce(new Vector3(0, fuerzaDeSalto, 0), ForceMode.Impulse);
+                    SoundSFxProta.InstanceSFxProta.saltoProta();
                 }
             }
 
