@@ -887,7 +887,8 @@ MonoBehaviour:
   velocidadRotacion: 200
   x: 0
   y: 0
-  fuerzaDeSalto: 8
+  fuerzaDeSalto: 30
+  fuerzaExtra: 2
   puedoSaltar: 0
   estoyAtacando: 0
   avanzoSolo: 0

@@ -14,6 +14,7 @@ public class PlayerProta : MonoBehaviour
     public float x, y;
 
     public float fuerzaDeSalto = 8.0f;
+    public int fuerzaExtra = 0;
     public bool puedoSaltar;
 
     public bool estoyAtacando;
@@ -100,6 +101,7 @@ public class PlayerProta : MonoBehaviour
 
     public void EstoyCayendo()
     {
+        rb.AddForce(fuerzaExtra * Physics.gravity);
         anim.SetBool("tocoSuelo", false);
         anim.SetBool("salte", false);
     }
