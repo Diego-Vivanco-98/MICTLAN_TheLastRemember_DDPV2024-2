@@ -10,6 +10,7 @@ TagManager:
   - Escopeta
   - Macuahuitl
   - Prota
+  - Item
   layers:
   - Default
   - TransparentFX
