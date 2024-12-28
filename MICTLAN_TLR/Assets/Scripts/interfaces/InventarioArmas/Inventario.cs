@@ -21,7 +21,7 @@ public class Inventario : MonoBehaviour
         {
             slot[i] = slotHolder.transform.GetChild(i).gameObject;
 
-            if (slot[i].GetComponent<Slot>().item = null)
+            if (slot[i].GetComponent<Slot>().item == null)
             {
                 slot[i].GetComponent<Slot>().vacio = true;
             }
@@ -83,8 +83,14 @@ public class Inventario : MonoBehaviour
                 itemObject.transform.parent = slot[i].transform;
                 itemObject.SetActive(false);
 
-                slot[i].GetComponent<Slot>().vacio = false; 
+
+                slot[i].GetComponent<Slot>().UpdateSlot();
+
+                slot[i].GetComponent<Slot>().vacio = false;
+                return;
+
             }
+            
         }
     }
 }

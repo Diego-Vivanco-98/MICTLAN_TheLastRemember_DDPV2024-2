@@ -11,6 +11,7 @@ TagManager:
   - Macuahuitl
   - Prota
   - Item
+  - Armas
   layers:
   - Default
   - TransparentFX
