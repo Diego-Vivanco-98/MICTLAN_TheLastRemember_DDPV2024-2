@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
+
 public class PauseMenu : MonoBehaviour
 {
 
@@ -44,15 +46,21 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (pausa == false)
+            pausa = !pausa;
+
+            if (pausa)
             {
                 HUD.SetActive(false);
                 GrupoMenuPausa.SetActive(true);
-                pausa = true;
+                //pausa = true;
 
                 Time.timeScale = 0;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+            }
+            else
+            {
+                Reanudar();
             }
         }
 
@@ -64,7 +72,7 @@ public class PauseMenu : MonoBehaviour
         HUD.SetActive(true);
         //ControladorOpciones.SetActive(false);
         GrupoMenuPausa.SetActive(false);
-        pausa = false;
+        //pausa = false;
 
         Time.timeScale = 1;
         Cursor.visible = false;

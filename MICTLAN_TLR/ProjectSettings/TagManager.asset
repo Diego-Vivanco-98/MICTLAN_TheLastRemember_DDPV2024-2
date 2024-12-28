@@ -12,6 +12,8 @@ TagManager:
   - Prota
   - Item
   - Armas
+  - Flor
+  - Enemigo
   layers:
   - Default
   - TransparentFX
