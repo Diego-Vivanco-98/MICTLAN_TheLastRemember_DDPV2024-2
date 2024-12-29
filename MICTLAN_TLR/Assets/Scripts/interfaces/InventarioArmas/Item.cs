@@ -17,10 +17,10 @@ public class Item : MonoBehaviour
     public bool equipado;
 
     [HideInInspector]
-    public GameObject armas;
+    public GameObject coleccionArmas;
 
     [HideInInspector]
-    public GameObject arma;
+    public GameObject arma = null;
 
     public bool playerArma;
 
@@ -29,25 +29,26 @@ public class Item : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        armas = GameObject.FindWithTag("Armas");
+        coleccionArmas = GameObject.FindWithTag("Armas");
         //Debug.LogError("No se encontró un objeto con el tag 'Armas'.");
-        if (armas == null)
+        if (coleccionArmas == null)
         {
             Debug.LogError("No se encontró un objeto con el tag 'Armas'.");
             return;
         }
         if (!playerArma)
         {
-            int numArmas = armas.transform.childCount;
+            int numArmas = coleccionArmas.transform.childCount;
             Debug.Log("Numero de Armas" + numArmas);
 
             for(int i=0; i < numArmas; i++)
             {
-                if (armas.transform.GetChild(i).gameObject.GetComponent<Item>().ID == ID)
+                if (coleccionArmas.transform.GetChild(i).gameObject.GetComponent<Item>().ID == ID)
                 {
                     Debug.Log("Encontro una coincidencia");
-                    arma = armas.transform.GetChild(i).gameObject;
+                    arma = coleccionArmas.transform.GetChild(i).gameObject;
                 }
+                Debug.Log("No encontro coincidencias");
 
             }
 
@@ -77,6 +78,18 @@ public class Item : MonoBehaviour
             arma.SetActive(true);
             arma.GetComponent<Item>().equipado = true;
         }
+        if (type == "Machete")
+        {
+            arma.SetActive(true);
+            arma.GetComponent<Item>().equipado = true;
+        }
+
+        if (type == "Espada")
+        {
+            arma.SetActive(true);
+            arma.GetComponent<Item>().equipado = true;
+        }
+
     }
 
 
