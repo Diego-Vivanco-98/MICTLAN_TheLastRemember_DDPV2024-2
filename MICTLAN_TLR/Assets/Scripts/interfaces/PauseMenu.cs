@@ -52,11 +52,12 @@ public class PauseMenu : MonoBehaviour
             {
                 HUD.SetActive(false);
                 GrupoMenuPausa.SetActive(true);
+                pausar();
                 //pausa = true;
 
-                Time.timeScale = 0;
+                /*Time.timeScale = 0;
                 Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                Cursor.lockState = CursorLockMode.None;*/
             }
             else
             {
@@ -64,6 +65,13 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
+    }
+
+    public void pausar()
+    {
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Reanudar()

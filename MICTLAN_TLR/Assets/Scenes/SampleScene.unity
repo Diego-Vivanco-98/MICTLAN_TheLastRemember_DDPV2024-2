@@ -1513,6 +1513,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4733244715438518452, guid: abbf010fde93f8f4ebaaa8ada90583c4, type: 3}
+--- !u!114 &386784609 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 732453428637195928, guid: 45e932fc81aa7bd4fbd16c8a4384117f,
+    type: 3}
+  m_PrefabInstance: {fileID: 46010302}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &395406737
 GameObject:
   m_ObjectHideFlags: 0
@@ -3223,7 +3235,7 @@ MonoBehaviour:
   HUD: {fileID: 1550721618}
   GameOver: {fileID: 1358005255}
   botonAjustes: {fileID: 395406739}
-  regresarMenuPausa: {fileID: 0}
+  regresarMenuPausa: {fileID: 386784609}
   continuar: {fileID: 610884999}
   salir: {fileID: 557138219}
   menuInicio: {fileID: 0}

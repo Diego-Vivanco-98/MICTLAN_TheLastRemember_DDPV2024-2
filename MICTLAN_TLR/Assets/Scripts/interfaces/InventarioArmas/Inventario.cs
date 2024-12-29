@@ -41,18 +41,36 @@ public class Inventario : MonoBehaviour
         if (activarInventario)
         {
             inventario.SetActive(true);
-            Time.timeScale = 0;
+            //pausar();
+
+            /*Time.timeScale = 0;
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.None;*/
 
         }
         else
         {
             inventario.SetActive(false);
-            Time.timeScale = 1;
+            //Reanudar();
+            /*Time.timeScale = 1;
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Locked;*/
         }
+    }
+
+    public void pausar()
+    {
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void Reanudar()
+    {
+        Time.timeScale = 1;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
 
