@@ -14,6 +14,8 @@ TagManager:
   - Armas
   - Flor
   - Enemigo
+  - puntosVida
+  - municiones
   layers:
   - Default
   - TransparentFX

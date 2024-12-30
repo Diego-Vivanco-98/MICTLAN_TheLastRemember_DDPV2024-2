@@ -90,6 +90,12 @@ public class Item : MonoBehaviour
             arma.GetComponent<Item>().equipado = true;
         }
 
+        if (type == "Macuahuitl")
+        {
+            arma.SetActive(true);
+            arma.GetComponent<Item>().equipado = true;
+        }
+
     }
 
 
