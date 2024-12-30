@@ -56,10 +56,11 @@ public class PlayerProta : MonoBehaviour
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
 
-        if (Input.GetButtonDown("Horizontal"))
+/*        if (Input.GetButtonDown("Horizontal"))
         {
             SoundSFxProta.InstanceSFxProta.caminaProta();
         }
+*/
 
 
         anim.SetFloat("velX", x);
